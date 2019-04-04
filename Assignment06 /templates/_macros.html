@@ -1,0 +1,26 @@
+{% macro show_classic(classics) %}
+<div class="card adjust-height">
+  <div class="card-content">
+    <div class="content">
+      <h1>
+        ${{ classics['cla_title'] }}<br>
+        ${{ classics['cla_author'] }}<br>
+        ${{ classics['cla_description'] }}
+      </h1>
+    </div>
+  </div>
+</div>
+    <br>
+    <br>
+{% endmacro %}
+
+
+{% macro show_classics(classics) %}
+<div>
+  {% for classic in classics %}
+  <div>
+    {{ show_classic(classic) }}
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
