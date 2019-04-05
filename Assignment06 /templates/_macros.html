@@ -1,12 +1,39 @@
 {% macro show_classic(classics) %}
-<div class="card adjust-height">
+<div class="card adjust-height p-3">
   <div class="card-content">
     <div class="content">
-      <h1>
-        ${{ classics['cla_title'] }}<br>
-        ${{ classics['cla_author'] }}<br>
-        ${{ classics['cla_description'] }}
-      </h1>
+      <h2>{{ classics['cla_title'] }}</h2>
+      <h4>by {{ classics['cla_author'] }}</h4>
+      <p>{{ classics['cla_description'] }}</p>
+    </div>
+  </div>
+</div>
+    <br>
+    <br>
+{% endmacro %}
+
+{% macro show_classics(classics) %}
+<div>
+  {% for classic in classics %}
+  <div>
+    {{ show_classic(classic) }}
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+
+
+
+
+
+{% macro show_comic(comics) %}
+<div class="card adjust-height p-3">
+  <div class="card-content">
+    <div class="content">
+      <h2>{{ comics['com_title'] }}</h2>
+      <h4>by {{ comics['com_author'] }}</h4>
+      <p>{{ comics['com_description'] }}</p>
     </div>
   </div>
 </div>
@@ -15,11 +42,44 @@
 {% endmacro %}
 
 
-{% macro show_classics(classics) %}
+{% macro show_comics(comics) %}
 <div>
-  {% for classic in classics %}
+  {% for comic in comics %}
   <div>
-    {{ show_classic(classic) }}
+    {{ show_comic(comic) }}
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+
+
+
+
+
+
+
+
+
+{% macro show_cookbook(cookbooks) %}
+<div class="card adjust-height p-3">
+  <div class="card-content">
+    <div class="content">
+      <h2>{{ cookbooks['coo_title'] }}</h2>
+      <h4>by {{ cookbooks['coo_author'] }}</h4>
+      <p>{{ cookbooks['coo_description'] }}</p>
+    </div>
+  </div>
+</div>
+    <br>
+    <br>
+{% endmacro %}
+
+{% macro show_cookbooks(cookbooks) %}
+<div>
+  {% for cookbook in cookbooks %}
+  <div>
+    {{ show_cookbook(cookbook) }}
   </div>
   {% endfor %}
 </div>

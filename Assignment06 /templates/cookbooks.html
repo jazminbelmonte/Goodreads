@@ -1,36 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<header>
-  <img src="/static/logo.jpg" alt="">
-</header>
-<div class="container text-center">
-  <br>
-  <br>
-  <div class="row">
-  <div class="col-4">
-    <div class="card" style="width: 18rem;">
-      <a href="/joy">
-        <img class="card-img-top" src="https://images.gr-assets.com/books/1379313627l/327847.jpg" alt="Card image cap">
-      </a>
-    </div>
-  </div>
-  <div class="col-4">
-    <div class="card" style="width: 18rem;">
-      <a href="/cravings">
-        <img class="card-img-top" src="https://images.gr-assets.com/books/1481803272l/25982685.jpg" alt="Card image cap">
-      </a>
-    </div>
-  </div>
-  <div class="col-4">
-    <div class="card" style="width: 18rem;">
-      <a href="/vegan">
-        <img class="card-img-top" src="https://images.gr-assets.com/books/1328751476l/1059680.jpg" alt="Card image cap">
-      </a>
-    </div>
-  </div>
-</div>
-
-  <br>
-  <p>Click <a href="/">here</a> to go home.</p>
-</div>
+    <br>
+{{ show_cookbooks(cookbooks) }}
+<p class="text-center">Click <a href="/">here</a> to go home.</p>
 {% endblock %}
